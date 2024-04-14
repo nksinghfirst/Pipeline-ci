@@ -5,7 +5,7 @@ app = Flask(__name__)
 api = Api(app)
 class Greeting (Resource):
     def get(self):
-        return "Hello world"
+        return "Hello world????"
 
 api.add_resource(Greeting, '/')
 if __name__ == '__main__':
