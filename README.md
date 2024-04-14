@@ -24,9 +24,9 @@ Step10 - Then created jenkins job for CI of pipeline selected webhook trigger an
 Step11 - Then buid the job to see if it was working or not.
 
 
-K8s repo - https://github.com/nksinghfirst/kubernetes-.git
+K8s repo - https://github.com/nksinghfirst/kubernete.git
 
-Step12 - Then I created another git repo that contain Jenkinsfile for updating the daocker image tag in deployment.yaml file and yaml file for k8s and argocd
+Step12 - Then I created another git repo that contain Jenkinsfile for updating the daocker image tag in deployment.yaml file and yaml files for k8s and argocd
 
 Step13 - Then created pipeline for it.
 
@@ -36,7 +36,7 @@ Step15 - Then I opened argocd and created a New App filled the detail and then c
 
 Step16 - APP Health was Healthy.
 
-Step17 - Then I make changes in deployment.yaml file changed 'replicas: 2 to replicas: 3' and then clicked on Refresh then it Synced it then their was 3 replicas.
+Step17 - Then I make changes in deployment.yaml file changed 'replicas: 2 to replicas: 3' and then clicked on Refresh or Sync then it Synced it then their was 3 replicas.
 
 
 Step18 - Then tested my CI CD setup by makings changes in code in git repo.
@@ -52,7 +52,18 @@ Step18 - Then tested my CI CD setup by makings changes in code in git repo.
 
 Step19 - Rollouts Strategy Canary Release - What Canary Release does is it expose a portion of your traffic to the new version like a new beta version of your application.
 
-Step - Clean UP - Delete the app that you created in the ArgoCD  using ArgoCD UI and once you do that all the resources of your app will get deleted from you K8s cluster.
+Step20 - Installed rollouts by following offical documents.
+
+Step21 - Now make some changes in the images and create a new image of it by running the CI pipeline again.
+
+Step22 - Then create a yaml for canary rollout in the same git repo as deployment.yaml. 
+
+Step23 - And make sure that in deployment.yaml the older version is mention and the newer version in roll.yaml.
+
+Step24 - After creating sync the changes in argocd and now you can also see the rollout in it.
+
+Step25 - Clean UP - Delete the app that you created in the ArgoCD  using ArgoCD UI and once you do that all the resources of your app will get deleted from you K8s cluster.
+     - Also by selecting PRUNE RESOURCES while creating APP what it does is it deleted the resources that are not presented in the github repo
        
 
 # Problems I faced while doing all this
@@ -76,4 +87,4 @@ sol. So I also connected it through SSH Client.
 
 5. First I use LoadBlancer to get the external link for the website but the APP Health was stuck on 'Processing' 
 
-sol. Then I used NodePort and then the APP Health was 'Healthy' (while i was looking about agrocd it was mentioned that if i want get an external link i should use LoadBlancer or NodePort)
+sol. Then I used NodePort and then the APP Health was 'Healthy'.
