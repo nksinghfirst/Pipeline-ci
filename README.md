@@ -64,11 +64,11 @@ Step24 - After creating sync the changes in argocd and now you can also see the 
 
 Step25 - Once everything was good APP health was Healthy and new version was working fine then I promote the rollout and check its status.
 
-$ kubectl argo rollouts get rollout <rollout-name> -n <namespace> //through cmd
+$ kubectl argo rollouts get rollout-name -n namespace //through cmd
 
 Step26 - Then the new image will be running completely and the old one will get deleted.
 
-$ kubectl argo rollouts promote <rollout-name> -n <namespace>
+$ kubectl argo rollouts promote rollout-name -n namespace
 
 Step27 - Clean UP - Delete the app that you created in the ArgoCD  using ArgoCD UI and once you do that all the resources of your app will get deleted from you K8s cluster.
      - Also by selecting PRUNE RESOURCES while creating APP what it does is it deleted the resources that are not presented in the github repo
